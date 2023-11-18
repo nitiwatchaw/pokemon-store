@@ -1,0 +1,124 @@
+.home-container {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    height: calc(100vh - 5.5rem);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    margin-top: 45px;
+    text-align: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 420px;
+    background: rgb(226, 64, 181);
+    background: linear-gradient(56deg, rgba(226, 64, 181, 1) 1%, rgba(228, 66, 161, 1) 27%, rgba(229, 72, 147, 1) 44%, rgba(231, 75, 129, 1) 65%, rgba(229, 82, 109, 1) 93%, rgba(231, 86, 89, 1) 100%);
+    border-radius: 1rem;
+
+}
+
+.content h1 {
+    margin: 0 0 45px 0;
+    font-size: 3.5rem;
+    color: white;
+}
+
+.content p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.content a {
+    text-decoration: none;
+    border-radius: .5rem;
+    background-color: white;
+    color: black;
+    padding: 12px;
+    border: 0;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition-duration: 300ms;
+
+}
+
+.content a:hover {
+    filter: brightness(90%);
+}
+
+.content .wrap {
+    padding: 0 20px;
+}
+
+.content .wrap a {
+    display: flex;
+    align-items: center;
+    width: 130px;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.content .wrap a span {
+    line-height: 12px;
+}
+
+.content img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 28%;
+    min-width: 250px;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+.content img:hover{
+    width: 30%;
+}
+.dec-1 {
+    position: absolute;
+    top: 74%;
+    left: 20%;
+}
+
+.dec-2 {
+    position: absolute;
+    bottom: 6%;
+    right: 5%;
+}
+
+@media (max-width:1020px) {
+
+    .dec-1,
+    .dec-2 {
+        display: none;
+    }
+}
+
+@media (max-width:678px) {
+    .content img {
+        display: none;
+
+    }
+    .content{
+        margin-top: 100px;
+    }
+    .content h1{
+        font-size: 2.8rem;
+    }
+    .home-container{
+        box-shadow: unset;
+        height: auto;
+    }
+}

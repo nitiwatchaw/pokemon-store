@@ -1,0 +1,48 @@
+.store-container {
+    border-radius: 1rem;
+    background-color: unset;
+    margin-top: 20px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+
+}
+
+.btn-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.btn-wrap button {
+    height: 40px;
+    width: 100px;
+    border: 0;
+    color: white;
+    background-color: #4650be;
+    font-size: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.btn-wrap button:hover {
+    filter: brightness(95%);
+}
+
+.btn-wrap button:disabled {
+    pointer-events: none;
+    background-color: #c7c7c7;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+

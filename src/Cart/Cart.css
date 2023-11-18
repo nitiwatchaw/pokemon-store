@@ -1,0 +1,186 @@
+.cart-cotainer {
+    border-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+    background-color: white;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+.cart-cotainer .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background-color: bisque;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition-duration: 300ms;
+}
+
+.cart-cotainer .cart-item:hover {
+    transform: scale(1.02);
+}
+
+.cart-cotainer .cart-item .cart-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+}
+
+
+.cart-cotainer .cart-item .name {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.cart-cotainer .cart-item .cost {
+    font-size: 1.2rem;
+
+}
+
+.cart-cotainer .cart-item .cost span {
+    font-weight: bold;
+    color: #e40000;
+}
+
+.cart-cotainer .cart-item button {
+    height: 40px;
+    border: 0;
+    border-radius: 1rem;
+    width: 80px;
+    font-size: 1rem;
+    color: white;
+    background-color: #210c3d;
+    cursor: pointer;
+}
+
+.cart-cotainer .cart-item button:hover {
+    background-color: #66478f;
+}
+
+
+.payment-container {
+    border-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+    background-color: white;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payment-container .cost p {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.payment-container .wrap-btn {
+    display: flex;
+    gap: 20px;
+}
+
+.payment-container .wrap-btn button:nth-child(1) {
+    width: 100px;
+    height: 40px;
+    border: 0;
+    font-size: 1rem;
+    border-radius: .4rem;
+    color: white;
+    background-color: #e40000;
+    cursor: pointer;
+}
+
+.payment-container .wrap-btn button:nth-child(1):hover,
+.payment-container .wrap-btn button:nth-child(2):hover {
+    filter: brightness(96%);
+}
+
+.payment-container .wrap-btn button:nth-child(2) {
+    width: 100px;
+    height: 40px;
+    border: 0;
+    font-size: 1rem;
+    border-radius: .4rem;
+    color: white;
+    background-color: #24b861;
+    cursor: pointer;
+}
+
+.lottie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lottie p {
+    font-size: 1.5rem;
+}
+
+.lottie .ani {
+    width: 160px;
+}
+
+.lottie a {
+    width: 120px;
+    height: 40px;
+    border: 0;
+    background-color: #57ceac;
+    color: white;
+    border-radius: .4rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.lottie a:hover {
+    filter: brightness(97%);
+}
+
+@media (max-width:754px) {
+    .cart-content {
+        flex-direction: column;
+        width: 100%;
+  
+    }
+    .cart-cotainer{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .cart-cotainer .cart-item {
+        flex-direction: column;
+        padding: 30px 0;
+        gap: 30px;
+    }
+
+    .cart-cotainer .cart-item .name {
+        font-size: 1.6rem;
+
+    }
+
+    .cart-cotainer .cart-item .cost {
+        font-size: 1.4rem;
+    }
+
+    .cart-cotainer .cart-item button {
+        width: 80%;
+        font-size: 1.1rem;
+    }
+}

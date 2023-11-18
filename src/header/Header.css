@@ -1,0 +1,143 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 92px;
+    border-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 0rem 1.2rem;
+    background-color: white;
+}
+
+
+
+.header-container ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 100px;
+    justify-content: center;
+    height: 100%;
+}
+
+.header-container ul li {
+    height: 100%;
+    position: relative;
+}
+
+.header-container ul li a {
+    color: #e2afaf;
+    font-size: 1.3rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition-duration: 300ms;
+    height: 100%;
+}
+
+.header-container ul li .nav-active {
+    color: #ff6e6e;
+}
+
+
+
+.header-container ul li a span {
+    margin-right: 6px;
+}
+
+.header-container ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: #ff6e6e;
+    bottom: 0;
+    transition-duration: 300ms;
+    border-radius: 35px;
+}
+
+.header-container ul li a:hover {
+    color: #ff6e6e;
+    transform: translateX(-6px);
+
+}
+
+.header-container ul li a:hover:after,
+.header-container ul li a.nav-active:after {
+    width: 100%;
+}
+
+
+.header-container .cart-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    background: black;
+    width: 80px;
+    height: 40px;
+    border-radius: 2rem;
+}
+
+.header-container .wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-bar {
+    display: none;
+    font-size: 35px;
+    background-color: unset;
+    border: 0;
+    cursor: pointer;
+    line-height: 10px;
+}
+
+
+@media (max-width:1020px) {
+
+    .header-container ul {
+        position: absolute;
+        z-index: 200;
+        flex-direction: column;
+        background-color: white;
+        top: 101px;
+        gap: 20px;
+        right: 62px;
+        width: 150px;
+        height: unset;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 1rem;
+        padding: 10px 0px;
+        opacity: 0;
+        transition-duration: 300ms;
+        pointer-events: none;
+    }
+
+    .header-container .activeLink {
+        opacity: 1;
+        pointer-events: all;
+        right: 48px;
+    }
+
+    .header-container ul li {
+        height: 40px;
+    }
+
+    .header-container ul li a {
+        font-size: 1.2rem;
+    }
+
+    .header-container ul li a::after {
+        display: none;
+    }
+
+    .menu-bar {
+        display: block;
+    }
+}
