@@ -18,6 +18,6 @@ const typeColors = {
     rock: '#a38c21',
     water: '#4592c4',
     psychic: '#063970',
-    steel:'#873e23'
+
 }
 export default typeColors

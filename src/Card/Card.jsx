@@ -28,9 +28,7 @@ const Card = ({ pokemon, setCart }) => {
         <>
             <div className='Card'>
                 <img src={pokemon.sprites.front_default} alt="" />
-
                 <div className="content-card">
-
                     <div className='name'>  {pokemon.name}</div>
                     <div className="wrap-grid">
                         <div className='type'> Type:</div>
@@ -59,7 +57,6 @@ const Card = ({ pokemon, setCart }) => {
                         <div className="wrap-cost">
                             Cost <span>  ${pokemon.id}</span>
                         </div>
-
 
                         <button onClick={() => addToCart(pokemon.id)}>Add <span><MdAddCircle /></span></button>
                     </div>

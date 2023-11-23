@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Card from '../Card/Card'
 import GridLoader from "react-spinners/GridLoader";
 import './Store.css'
-const Store = ({ loading, poke, prev, next, prevUrl, nextUrl, setCart }) => {
+const Store = ({ loading, poke, prev, next, prevUrl, nextUrl, setCart, cart }) => {
 
-
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart))
+    }, [cart])
     return (
         <div className='store-container'>
             <div className="btn-wrap">

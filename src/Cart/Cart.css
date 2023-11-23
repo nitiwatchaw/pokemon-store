@@ -89,7 +89,7 @@
     gap: 20px;
 }
 
-.payment-container .wrap-btn button:nth-child(1) {
+.payment-container .wrap-btn button {
     width: 100px;
     height: 40px;
     border: 0;
@@ -100,12 +100,11 @@
     cursor: pointer;
 }
 
-.payment-container .wrap-btn button:nth-child(1):hover,
-.payment-container .wrap-btn button:nth-child(2):hover {
+.payment-container .wrap-btn button:hover{
     filter: brightness(96%);
 }
 
-.payment-container .wrap-btn button:nth-child(2) {
+.payment-container .wrap-btn a button {
     width: 100px;
     height: 40px;
     border: 0;
@@ -159,11 +158,13 @@
     .cart-content {
         flex-direction: column;
         width: 100%;
-  
+
     }
-    .cart-cotainer{
+
+    .cart-cotainer {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+
     .cart-cotainer .cart-item {
         flex-direction: column;
         padding: 30px 0;

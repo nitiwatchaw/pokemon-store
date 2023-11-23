@@ -5,7 +5,7 @@ import Header from './header/Header'
 import Cart from './Cart/Cart'
 import { Route, Routes } from 'react-router-dom'
 import { getAllPokemon, getPokemon } from './services/pokemon'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 
@@ -20,6 +20,7 @@ function App() {
   const initialUrl = "https://pokeapi.co/api/v2/pokemon"
 
 
+  // fetch data
   useEffect(() => {
 
     const loadData = async () => {
@@ -29,7 +30,7 @@ function App() {
         setNextUrl(res.next)
         setPrevUrl(res.previous)
         await loadingPokemon(res.results)
-
+        console.log("intial", res)
       }
       catch (err) {
         setError("Something went wrong ", err)
@@ -40,21 +41,23 @@ function App() {
     }
     loadData();
 
+
+
   }, [])
 
-
+  // fecth data from fetched 
   const loadingPokemon = async (data) => {
     let _Poke = await Promise.all(
       data.map(async pokemon => {
         let pokemonRecord = await getPokemon(pokemon.url)
         return pokemonRecord
       }));
-
+    console.log("second", _Poke)
     setPoke(_Poke)
 
   }
 
-
+  //  next data
   const next = async () => {
     if (!nextUrl) {
       return setLoading(false)
@@ -65,8 +68,11 @@ function App() {
     setNextUrl(data.next)
     setPrevUrl(data.previous)
     setLoading(false)
+    console.log("next", data.results)
+
   }
 
+  // back data
   const prev = async () => {
     if (!prevUrl) {
       return setLoading(false)
@@ -80,9 +86,17 @@ function App() {
   }
 
 
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState(() => {
+    try {
+      const storedCart = localStorage.getItem("cart");
 
-  const [cartTotal, setCartTotal] = useState(0)
+      return storedCart ? JSON.parse(storedCart) : [];
+    } catch (error) {
+
+      return [];
+    }
+  });
+
 
   return (
     <>
@@ -102,8 +116,12 @@ function App() {
       <Routes >
         <Route path='/' element={<Home />} />
         <Route path='/store' element={<Header cart={cart} />} >
-          <Route path='/store/list' element={<Store loading={loading} poke={poke} next={next} prev={prev} prevUrl={prevUrl} nextUrl={nextUrl} setCart={setCart} />} />
-          <Route path='/store/cart' element={<Cart setCart={setCart} cart={cart} cartTotal={cartTotal} setCartTotal={setCartTotal} />} />
+          <Route
+            path='/store/list'
+            element={<Store loading={loading} poke={poke} next={next} prev={prev} prevUrl={prevUrl} nextUrl={nextUrl} setCart={setCart} cart={cart} />} />
+          <Route
+            path='/store/cart'
+            element={<Cart setCart={setCart} cart={cart} />} />
         </Route >
       </Routes >
     </>

@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Cart.css'
 import Lottie from 'lottie-react'
 import animationData from '../img//Animation - 1700302195920.json'
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
-const Cart = ({ cart, setCart, cartTotal, setCartTotal }) => {
+const Cart = ({ cart, setCart }) => {
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart))
+  }, [cart])
 
   const deleteCart = (pokeID) => {
     setCart((prevState) => {
@@ -42,7 +46,7 @@ const Cart = ({ cart, setCart, cartTotal, setCartTotal }) => {
 
 
   const cartTotals = cart.reduce((acc, item) => acc + item.id, 0);
-  setCartTotal(cartTotals);
+
 
   return (
     <>
@@ -69,11 +73,13 @@ const Cart = ({ cart, setCart, cartTotal, setCartTotal }) => {
 
           <div className="payment-container">
             <div className="cost">
-              <p>Total Cost  <span>${cartTotal}</span></p>
+              <p style={{ marginRight: "10px" }}>Total Cost  <span>${cartTotals}</span></p>
             </div>
             <div className="wrap-btn">
               <button onClick={clear}>Clear Cart</button>
-              <button onClick={pay}>Submit Pay</button>
+              <Link to="/">
+                <button onClick={pay}>Buy now</button>
+              </Link>
             </div>
           </div>
 
